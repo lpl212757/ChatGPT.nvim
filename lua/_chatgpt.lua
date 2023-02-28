@@ -1,7 +1,7 @@
 -- main module file
-local module = require("chatgpt.module")
-local config = require("chatgpt.config")
-local signs = require("chatgpt.signs")
+local module = require("_chatgpt.module")
+local config = require("_chatgpt.config")
+local signs = require("_chatgpt.signs")
 
 local M = {}
 
