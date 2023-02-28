@@ -1,22 +1,22 @@
 vim.api.nvim_create_user_command("ChatGPT", function()
-  require("chatgpt").openChat()
+  require("_chatgpt").openChat()
 end, {})
 
 vim.api.nvim_create_user_command("ChatGPTActAs", function()
-  require("chatgpt").selectAwesomePrompt()
+  require("_chatgpt").selectAwesomePrompt()
 end, {})
 
 vim.api.nvim_create_user_command("ChatGPTEditWithInstructions", function()
-  require("chatgpt").edit_with_instructions()
+  require("_chatgpt").edit_with_instructions()
 end, {})
 
 vim.api.nvim_create_user_command("ChatGPTRun", function(opts)
-  require("chatgpt").run_action(opts)
+  require("_chatgpt").run_action(opts)
 end, {
   nargs = "*",
   range = true,
   complete = function()
-    local ActionFlow = require("chatgpt.flows.actions")
+    local ActionFlow = require("_chatgpt.flows.actions")
     local action_definitions = ActionFlow.read_actions()
 
     local actions = {}
@@ -30,12 +30,12 @@ end, {
 })
 
 vim.api.nvim_create_user_command("ChatGPTRunCustomCodeAction", function(opts)
-  require("chatgpt").run_custom_code_action(opts)
+  require("_chatgpt").run_custom_code_action(opts)
 end, {
   nargs = "*",
   range = true,
 })
 
 vim.api.nvim_create_user_command("ChatGPTCompleteCode", function(opts)
-  require("chatgpt").complete_code(opts)
+  require("_chatgpt").complete_code(opts)
 end, {})
