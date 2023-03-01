@@ -1,17 +1,17 @@
 vim.api.nvim_create_user_command("ChatGPT", function()
-  require("_chatgpt").openChat()
+  require("chatgpt").openChat()
 end, {})
 
 vim.api.nvim_create_user_command("ChatGPTActAs", function()
-  require("_chatgpt").selectAwesomePrompt()
+  require("chatgpt").selectAwesomePrompt()
 end, {})
 
 vim.api.nvim_create_user_command("ChatGPTEditWithInstructions", function()
-  require("_chatgpt").edit_with_instructions()
+  require("chatgpt").edit_with_instructions()
 end, {})
 
 vim.api.nvim_create_user_command("ChatGPTRun", function(opts)
-  require("_chatgpt").run_action(opts)
+  require("chatgpt").run_action(opts)
 end, {
   nargs = "*",
   range = true,
